@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "name": "Crispus Attucks",
+    "born": "c. 1723",
+    "sortYear": 1770,
+    "description": "The first person to die for American Freedom at the Boston Massacre in 1770."
+  },
+  {
+    "id": 2,
+    "name": "Phillis Wheatley",
+    "born": "c. 1753",
+    "sortYear": 1773,
+    "description": "The first Black woman to become a published poet in the Americas in September 1773."
+  },
+  {
+    "id": 3,
+    "name": "Elizabeth Freeman (Mumbet)",
+    "born": "c. 1744",
+    "sortYear": 1781,
+    "description": "One of the first former slaves to win her freedom through a lawsuit in Massachusetts in 1781."
+  },
+  {
+    "id": 4,
+    "name": "Gustavus Vassa / Olaudah Equiano",
+    "born": "c. 1745",
+    "sortYear": 1789,
+    "description": "Wrote and published in 1789 the first autobiography in the western world chronicling life as an enslaved West African man born in modern day Nigeria."
+  },
+  {
+    "id": 5,
+    "name": "Sojourner Truth",
+    "born": "c. 1797",
+    "sortYear": 1797,
+    "description": "An American abolitionist, orator, and activist for civil rights for African Americans and women. Author of the speech \"Ain't I a Woman?\""
+  },
+  {
+    "id": 6,
+    "name": "Frederick Douglass",
+    "born": "1818",
+    "sortYear": 1818,
+    "description": "An American abolitionist, orator, writer, and statesman, who escaped slavery in 1838."
+  },
+  {
+    "id": 7,
+    "name": "Harriet Tubman",
+    "born": "1822",
+    "sortYear": 1822,
+    "description": "An American abolitionist and known as the \"Moses of Her People\" for helping over 700+ enslaved humans escape using the Underground Railroad. Later she served as a scout and spy on behalf of the Union during the American Civil War."
+  },
+  {
+    "id": 8,
+    "name": "John Mercer Langston",
+    "born": "1829",
+    "sortYear": 1829,
+    "description": "The first Black man to become a lawyer when he passed the bar in Ohio in 1854. He also served as the founding dean of Howard University's law school."
+  },
+  {
+    "id": 9,
+    "name": "Lewis Latimer",
+    "born": "1848",
+    "sortYear": 1848,
+    "description": "An African American inventor and patent draftsman who invented the carbon filaments used in electric light bulbs, the evaporative air conditioner, and more items during his lifetime."
+  },
+  {
+    "id": 10,
+    "name": "John W. Dobbs",
+    "born": "1882",
+    "sortYear": 1882,
+    "description": "A civic and political leader in the Black community in Atlanta in the early 20th century. During his lifetime, he was known as the unofficial mayor of Sweet Auburn, a majority black and wealthy suburb in Atlanta."
+  },
+  {
+    "id": 11,
+    "name": "Dr. Charles Drew",
+    "born": "1904",
+    "sortYear": 1904,
+    "description": "A pioneering medical doctor who invented a way to safely store, process, and transport blood plasma which led to the development of large scale blood banks used during WWII."
+  },
+  {
+    "id": 12,
+    "name": "Recy Taylor",
+    "born": "1919",
+    "sortYear": 1919,
+    "description": "Spoke out publicly about her kidnapping, sexual assault and rape by a group of white men in Alabama in 1944."
+  },
+  {
+    "id": 13,
+    "name": "Mary Jackson",
+    "born": "1921",
+    "sortYear": 1921,
+    "description": "The first Black woman to become an aerospace engineer at NASA and member of the West Area Computers, the all Black woman unit of mathematicians who verified the work of early engineers at the National Advisory Committee for Aeronautics, direct predecessor of NASA."
+  },
+  {
+    "id": 14,
+    "name": "Claudette Colvin",
+    "born": "1939",
+    "sortYear": 1939,
+    "description": "The first black woman arrested for resisting segregation on buses in Montgomery, Alabama, eventually inspiring the start of Montgomery Bus Boycott nine months later."
+  },
+  {
+    "id": 15,
+    "name": "Dr. Huey P. Newton",
+    "born": "1942",
+    "sortYear": 1942,
+    "description": "A revolutionary in Oakland, California, who co-founded and led the Black Panther Party with Bobby Seale. He also helped create the Black Panther's 10 point program entitled \"What We Want, What We Believe\"."
+  },
+  {
+    "id": 16,
+    "name": "Lonnie Johnson",
+    "born": "1949",
+    "sortYear": 1949,
+    "description": "An aerospace engineer at the Jet Propulsion Laboratory and entrepreneur best known for his invention, the Super Soaker water gun."
+  }
+]

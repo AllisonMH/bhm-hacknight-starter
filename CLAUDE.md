@@ -2,78 +2,102 @@
 
 ## Project Overview
 
-**bhm-hacknight-starter** is a static web project that presents chronologically ordered Black history facts for open use. It is built with vanilla HTML, JavaScript, and SCSS — no frameworks.
+**bhm-hacknight-starter** is a React single-page application that presents chronologically ordered mini biographies of Black History major figures and their contributions. It is built with React, Vite, and SCSS, and deployed to Vercel.
 
 ## Repository Structure
 
 ```
 bhm-hacknight-starter/
-├── README.md          # Project description
-└── CLAUDE.md          # This file — AI assistant guidelines
-```
-
-This is a starter/template repository in early stages. As the project grows, expect the following conventional structure:
-
-```
-bhm-hacknight-starter/
-├── index.html         # Main HTML entry point
-├── css/               # Compiled CSS output (do not edit directly)
-├── scss/              # SCSS source files
-│   └── styles.scss    # Main stylesheet
-├── js/                # JavaScript source files
-│   └── main.js        # Main script
-├── assets/            # Images, fonts, and other static assets
-├── data/              # Black history facts data (JSON or similar)
+├── index.html                    # HTML entry point
+├── package.json                  # Dependencies and scripts
+├── vite.config.js                # Vite configuration
+├── vercel.json                   # Vercel deployment config
+├── src/
+│   ├── main.jsx                  # React entry point
+│   ├── App.jsx                   # Root component
+│   ├── components/
+│   │   ├── Header.jsx            # Page header with title
+│   │   ├── Timeline.jsx          # Timeline layout, loads and sorts biographies
+│   │   ├── BiographyCard.jsx     # Individual biography card
+│   │   └── Footer.jsx            # Page footer
+│   ├── data/
+│   │   └── biographies.json      # All biography entries (sorted by sortYear)
+│   └── scss/
+│       ├── _variables.scss       # Colors, spacing, breakpoints
+│       └── styles.scss           # All component styles (BEM naming)
 ├── README.md
 └── CLAUDE.md
 ```
 
 ## Tech Stack
 
-- **HTML** — page structure and markup
-- **JavaScript** — vanilla JS, no frameworks
-- **SCSS** — styling via Sass preprocessor (compiles to CSS)
+- **React** — UI components (functional components, no class components)
+- **Vite** — build tool and dev server
+- **SCSS** — styling via Sass preprocessor (Vite handles compilation)
+- **Vercel** — hosting and deployment
+
+## Design System
+
+### Color Palette
+- **Red:** `#961d1d` — accents, timeline dots, card badges
+- **Black:** `#000000` — page background
+- **Green:** `#318540` — accents, alternating card elements
+- **White:** `#F0F0F0` — all text
+
+### SCSS Variables
+All design tokens are defined in `src/scss/_variables.scss`. Use these variables rather than hardcoding values.
+
+### CSS Architecture
+- BEM naming convention (`.block__element--modifier`)
+- Component styles live in `src/scss/styles.scss`
+- Max 3 levels of SCSS nesting
 
 ## Development Workflow
 
 ### Prerequisites
 
-- A modern web browser
-- An SCSS compiler (e.g., `sass` CLI, or a VS Code extension like "Live Sass Compiler")
-- Optionally, a local dev server (e.g., `live-server`, `python -m http.server`, or the VS Code Live Server extension)
+- Node.js (LTS)
+- npm
 
 ### Getting Started
 
-1. Clone the repository
-2. Compile SCSS to CSS: `sass scss/styles.scss css/styles.css` (or use a watch mode)
-3. Open `index.html` in a browser or start a local dev server
+```bash
+npm install
+npm run dev
+```
 
-### No Build System Yet
+### Building for Production
 
-There is no `package.json`, bundler, or task runner configured. If one is added later, update this section accordingly.
+```bash
+npm run build
+```
+
+Output goes to `dist/`.
+
+### Deployment
+
+The project is configured for Vercel via `vercel.json`. Push to the connected branch and Vercel builds and deploys automatically.
 
 ## Code Conventions
 
-### HTML
-- Use semantic HTML5 elements (`<main>`, `<section>`, `<article>`, `<header>`, `<footer>`, etc.)
-- Keep markup accessible (use `alt` attributes on images, proper heading hierarchy, ARIA labels where needed)
-
-### JavaScript
-- Write vanilla ES6+ JavaScript (no jQuery, no frameworks)
+### React / JavaScript
+- Functional components only (arrow functions)
 - Use `const` and `let` — never `var`
-- Use descriptive variable and function names
-- Keep functions small and focused
+- Props are destructured in function parameters
+- Keep components small and focused
+- Data lives in `src/data/` as JSON, not hardcoded in components
 
 ### SCSS
-- Write styles in `.scss` files under the `scss/` directory
-- Never edit compiled CSS files directly
-- Use variables for colors, fonts, and repeated values
-- Use nesting sparingly (max 3 levels deep)
+- Write styles in `.scss` files under `src/scss/`
+- Use variables from `_variables.scss` for colors, spacing, and breakpoints
+- BEM naming convention
+- Nesting max 3 levels deep
 
 ### Data
-- Black history facts should be stored as structured data (e.g., JSON) rather than hardcoded in HTML
-- Facts should include a date or year for chronological ordering
-- Each fact entry should have at minimum: date/year, title, and description
+- Biographies are stored in `src/data/biographies.json`
+- Each entry has: `id`, `name`, `born`, `sortYear`, `description`
+- `sortYear` determines chronological display order
+- The `Timeline` component sorts entries by `sortYear` ascending
 
 ## Git Conventions
 
@@ -83,6 +107,7 @@ There is no `package.json`, bundler, or task runner configured. If one is added 
 
 ## Key Decisions
 
-- **No framework** — this project intentionally uses vanilla HTML, JS, and SCSS for simplicity and accessibility to contributors of all skill levels
-- **Chronological ordering** — facts are presented in date order; this is a core design requirement
+- **React + Vite** — chosen for fast development, component-based architecture, and easy Vercel deployment
+- **Chronological ordering** — biographies are presented in date order via `sortYear`; this is a core design requirement
 - **Open use** — the project and its content are intended for open/public use
+- **Red/Black/Green palette** — intentional Pan-African color scheme

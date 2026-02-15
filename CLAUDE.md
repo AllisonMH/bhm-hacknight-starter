@@ -111,3 +111,36 @@ The project is configured for Vercel via `vercel.json`. Push to the connected br
 - **Chronological ordering** — biographies are presented in date order via `sortYear`; this is a core design requirement
 - **Open use** — the project and its content are intended for open/public use
 - **Red/Black/Green palette** — intentional Pan-African color scheme
+
+## Using This Repo with Other AI Assistants
+
+This `CLAUDE.md` file documents the full project structure and conventions. You can share it with any AI assistant to give it context about the codebase.
+
+### General Tips (All AI Tools)
+
+- **Share this file upfront** — Paste the contents of `CLAUDE.md` at the start of any conversation so the AI understands the codebase layout, conventions, and design system.
+- **Share `biographies.json` when editing data** — Copy the JSON structure so the AI matches the `id`, `name`, `born`, `sortYear`, `description` schema.
+- **Specify the tech stack explicitly** — Say "React with Vite and SCSS (no TypeScript, no Tailwind)" to avoid off-target suggestions.
+- **Reference the BEM naming convention** — Mention that styles use BEM (e.g., `.bio-card__name`) so generated CSS/SCSS stays consistent.
+
+### Google Gemini Tips
+
+- **Use Gemini in Google IDX or AI Studio** — You can import the repo directly and get inline suggestions that respect the project structure.
+- **Be specific about SCSS variables** — Gemini tends to hardcode hex values. Remind it: "Use `$red`, `$green`, `$black`, `$white` from `_variables.scss` instead of raw hex codes."
+- **Ask for one file at a time** — Gemini handles focused, single-file requests better than multi-file refactors.
+
+### ChatGPT Tips
+
+- **Use canvas mode for code edits** — Paste file contents directly for better context. ChatGPT doesn't have filesystem access outside plugins, so you'll need to share relevant files manually.
+- **Set a custom instruction or system prompt** — Something like: *"I'm working on a React + Vite + SCSS project. No TypeScript. Functional arrow components only. BEM naming for CSS. Color palette: red #961d1d, black #000000, green #318540, white #F0F0F0."*
+- **Pin the data schema** — When asking it to add new biographies, show an example entry so it matches the `sortYear` ordering pattern.
+
+### Common Pitfalls to Watch For
+
+| Pitfall | What to tell the AI |
+|---|---|
+| Adds TypeScript | "This project uses plain JSX, not TSX" |
+| Uses CSS modules or Tailwind | "Use SCSS with BEM naming in `styles.scss`" |
+| Hardcodes colors | "Use SCSS variables from `_variables.scss`" |
+| Creates class components | "Use functional arrow components only" |
+| Puts data in components | "Data lives in `src/data/biographies.json`" |

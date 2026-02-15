@@ -1,0 +1,269 @@
+@use 'variables' as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family;
+  background-color: $black;
+  color: $white;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+// Header
+.header {
+  text-align: center;
+  padding: $spacing-xl $spacing-md;
+  background: linear-gradient(
+    135deg,
+    $red 0%,
+    $black 50%,
+    $green 100%
+  );
+  border-bottom: $timeline-width solid $red;
+
+  &__title {
+    font-size: $font-size-xxl;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: $spacing-xs;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 3rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: $font-size-lg;
+    font-weight: 300;
+    opacity: 0.9;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  &__color-bar {
+    display: flex;
+    height: 6px;
+    margin-top: $spacing-lg;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    overflow: hidden;
+
+    span {
+      flex: 1;
+
+      &:nth-child(1) { background-color: $red; }
+      &:nth-child(2) { background-color: $black; border-top: 1px solid $card-border; border-bottom: 1px solid $card-border; }
+      &:nth-child(3) { background-color: $green; }
+    }
+  }
+}
+
+// Timeline
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: $spacing-xl $spacing-md;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: $timeline-width;
+    background: linear-gradient($red, $green);
+
+    @media (min-width: $breakpoint-md) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+// Biography Card
+.bio-card {
+  position: relative;
+  margin-bottom: $spacing-xl;
+  padding-left: 50px;
+
+  @media (min-width: $breakpoint-md) {
+    width: 50%;
+    padding-left: 0;
+
+    &:nth-child(odd) {
+      padding-right: $spacing-lg;
+      text-align: right;
+
+      .bio-card__dot {
+        right: -11px;
+        left: auto;
+      }
+
+      .bio-card__year {
+        right: -95px;
+        left: auto;
+        text-align: left;
+      }
+    }
+
+    &:nth-child(even) {
+      margin-left: 50%;
+      padding-left: $spacing-lg;
+
+      .bio-card__dot {
+        left: -11px;
+      }
+
+      .bio-card__year {
+        left: -95px;
+        text-align: right;
+      }
+    }
+  }
+
+  // Timeline dot
+  &__dot {
+    position: absolute;
+    left: 13px;
+    top: $spacing-md;
+    width: $timeline-dot;
+    height: $timeline-dot;
+    border-radius: 50%;
+    background-color: $red;
+    border: 3px solid $black;
+    z-index: 1;
+
+    @media (min-width: $breakpoint-md) {
+      top: $spacing-lg;
+    }
+  }
+
+  &:nth-child(3n+2) .bio-card__dot {
+    background-color: $green;
+  }
+
+  &:nth-child(3n) .bio-card__dot {
+    background-color: $white;
+  }
+
+  // Year badge (visible on desktop next to timeline)
+  &__year {
+    display: none;
+
+    @media (min-width: $breakpoint-md) {
+      display: block;
+      position: absolute;
+      top: $spacing-lg;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: rgba($white, 0.5);
+      width: 80px;
+    }
+  }
+
+  // Card content
+  &__content {
+    background-color: $card-bg;
+    border: 1px solid $card-border;
+    border-radius: 8px;
+    padding: $spacing-md;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      border-color: $red;
+    }
+  }
+
+  &:nth-child(3n+2) .bio-card__content:hover {
+    border-color: $green;
+  }
+
+  &__born {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: $black;
+    background-color: $red;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-bottom: $spacing-xs;
+
+    @media (min-width: $breakpoint-md) {
+      display: inline-block;
+    }
+  }
+
+  &:nth-child(3n+2) .bio-card__born {
+    background-color: $green;
+  }
+
+  &:nth-child(3n) .bio-card__born {
+    background-color: $card-border;
+    color: $white;
+  }
+
+  &__name {
+    font-size: $font-size-xl;
+    font-weight: 700;
+    margin-bottom: $spacing-xs;
+    color: $white;
+  }
+
+  &__description {
+    font-size: $font-size-base;
+    line-height: 1.7;
+    color: rgba($white, 0.85);
+  }
+}
+
+// Footer
+.footer {
+  text-align: center;
+  padding: $spacing-lg $spacing-md;
+  border-top: $timeline-width solid $green;
+  background: linear-gradient(
+    135deg,
+    $green 0%,
+    $black 50%,
+    $red 100%
+  );
+
+  &__text {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+
+  &__color-bar {
+    display: flex;
+    height: 6px;
+    margin-bottom: $spacing-md;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    overflow: hidden;
+
+    span {
+      flex: 1;
+
+      &:nth-child(1) { background-color: $red; }
+      &:nth-child(2) { background-color: $black; border-top: 1px solid $card-border; border-bottom: 1px solid $card-border; }
+      &:nth-child(3) { background-color: $green; }
+    }
+  }
+}
